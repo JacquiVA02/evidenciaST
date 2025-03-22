@@ -40,8 +40,10 @@ jobs:
         spark-version: '3.5.3'
         hadoop-version: '3'
 
-    - run: spark-submit --master local hello-spark.py
-    - run: ls -la  
+    - run: wget -O dataset.csv https://raw.githubusercontent.com/JacquiVA02/evidenciaST/refs/heads/main/genshin_characters_v1.csv   
+    - run: ls -la
+    - run: spark-submit --master local genshin-impact.py 
+  
 
     - name: GIT commit and push docs
       env: 
